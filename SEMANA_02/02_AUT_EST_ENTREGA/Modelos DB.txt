@@ -1,0 +1,8 @@
+Modelo Conceitual:
+É o modelo de mais alto nível e que está mais próximo da realidade dos usuários. Ele é desenvolvido com um alto grau de abstração, baseando-se nos requisitos do sistema obtidos durante a fase de levantamento de requisitos. Este modelo pode ser representado através de dois tipos de diagramas: o Diagrama de Entidade e Relacionamento (DER) e/ou o Diagrama de Classes.
+
+Modelo Lógico: 
+É a forma como os dados são organizados e conectados no computador. Dependendo da tecnologia, como bancos de dados relacionais, os dados são organizados em tabelas com colunas e linhas. As conexões são feitas usando chaves específicas. Por exemplo, em uma loja, teríamos tabelas de clientes, produtos e pedidos, e elas se conectariam através dessas chaves.
+
+
+Modelo Físico: Mostra como os dados são guardados no computador e realmente implementaados usando uma linguagem e um programa específico, como PostgreSQL ou MySQL. Escolhemos o programa com base no modelo lógico que foi adotdo.
