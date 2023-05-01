@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="Sqlite" id="Project-1db5" database="Sqlite" >
+	<schema name="Default" >
+		<table name="Coleta" >
+			<column name="CD_COLETA" type="INTEGER" jt="4" mandatory="y" />
+			<column name="ID_COLETA" type="INTEGER" jt="4" />
+			<column name="ID_PLANTA" type="INTEGER" jt="4" />
+			<column name="ID_COLETOR" type="INTEGER" jt="4" />
+			<column name="Quantidade" type="INTEGER" jt="4" mandatory="y" />
+			<column name="Local" type="TEXT" jt="-1" />
+			<index name="pk_Coleta" unique="PRIMARY_KEY" >
+				<column name="CD_COLETA" />
+			</index>
+			<index name="unq_Coleta" unique="UNIQUE_KEY" >
+				<column name="ID_COLETA" />
+			</index>
+			<fk name="fk_Coleta" to_schema="Default" to_table="Plantas" >
+				<fk_column name="ID_PLANTA" pk="ID_PLANTA" />
+			</fk>
+			<fk name="fk_Coleta_0" to_schema="Default" to_table="Coletores" >
+				<fk_column name="ID_COLETOR" pk="ID_COLETOR" />
+			</fk>
+		</table>
+		<table name="Coletores" >
+			<column name="ID_COLETOR" type="INTEGER" jt="4" mandatory="y" />
+			<column name="Nome" type="TEXT" jt="-1" />
+			<index name="pk_Coletores" unique="PRIMARY_KEY" >
+				<column name="ID_COLETOR" />
+			</index>
+		</table>
+		<table name="Plantas" >
+			<comment><![CDATA[Dados sobre cada espécies de planta]]></comment>
+			<column name="ID_PLANTA" type="INTEGER" jt="4" mandatory="y" />
+			<column name="Nome" type="TEXT" jt="-1" mandatory="y" />
+			<column name="Cor" type="TINYTEXT" jt="-1" />
+			<column name="Categoria" type="TEXT" jt="-1" />
+			<index name="pk_Plantas" unique="PRIMARY_KEY" >
+				<column name="ID_PLANTA" />
+			</index>
+		</table>
+	</schema>
+	<connector name="Sqlite" database="Sqlite" driver_class="org.sqlite.JDBC" driver_jar="sqlite-jdbc-3.40.0.0.jar" driver_desc="Standard" host="localhost" port="7210" instance="C:/Users/leogk/OneDrive/Documents/GitHub/Tutorial_M2_Leonardo_Kalid/SEMANA_02/02_AUT_EST_ENTREGA/Aula02_Ex1" useSystemProxy="false" />
+	<layout name="Main Layout" id="Layout-2600" show_relation="columns" >
+		<entity schema="Default" name="Coleta" color="C1D8EE" x="464" y="624" />
+		<entity schema="Default" name="Coletores" color="C1D8EE" x="624" y="288" />
+		<entity schema="Default" name="Plantas" color="C1D8EE" x="352" y="240" />
+		<callout x="48" y="48" pointer="Round" >
+			<comment><![CDATA[This is a layout. 
+- Right-click the layout to create new tables. 
+- Double-click table headers to edit.
+- Drag tables to the layout from the structure tree, or 
+   add them by pressing the arrow icon near columns 
+- Create multiple layouts with the same or different tables.]]></comment>
+		</callout>
+	</layout>
+</project>
