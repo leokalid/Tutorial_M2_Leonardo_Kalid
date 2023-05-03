@@ -15,6 +15,8 @@
         <br>
         TELEFONE: <input type="phone" id="telefone" name="telefone" value="">
         <br>
+        IDADE: <input type="number" name="idade" value="" required>
+        <br>
         <input type="hidden" id="userId" name="userId" value="">
         
         <input type="submit" value="ATUALIZAR">  
@@ -37,6 +39,7 @@
                 document.getElementById('nome').value = usuario.nome_completo;
                 document.getElementById('email').value = usuario.email;
                 document.getElementById('telefone').value = usuario.telefone;
+                document.getElementById('idade').value = usuario.idade;
             });
             alert(response.json());
         })
